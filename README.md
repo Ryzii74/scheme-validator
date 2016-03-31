@@ -1,5 +1,5 @@
 # scheme-validator 
-[![Build Status](https://travis-ci.org/Ryzii74/scheme-validator.svg?branch=master)](https://travis-ci.org/Ryzii74/scheme-validator)
+[![Build Status](https://travis-ci.org/Ryzii74/scheme-validator.svg?branch=master)](https://travis-ci.org/Ryzii74/scheme-validator) [![Code Climate](https://codeclimate.com/github/Ryzii74/scheme-validator/badges/gpa.svg)](https://codeclimate.com/github/Ryzii74/scheme-validator)
 
 Simple lib for object validation by scheme for node.js
 
