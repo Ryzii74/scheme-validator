@@ -56,3 +56,21 @@ var scheme = {
 ```
 
 If field is not required and have no value in validated data - result will be successful!
+
+
+### Validation result structure
+
+```javascript
+//successfull result
+var validationResult = { success : true };
+
+//unsuccessfull result
+var validationResult = { 
+    success : false,
+    error : {
+        key : "name" // field name from scheme with validation error,
+                     // "address.city" if error in strucrute (inner object)
+        text : "..." // some error text
+    }
+};
+```
