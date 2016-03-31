@@ -21,7 +21,7 @@ var validationResult = validationScheme(<object scheme>).validate(data);
 ```javascript
 var scheme = {
     name : {
-        required : true  // requiredField,
+        required : true, // requiredField,
         type : "string"  // type of string
     },
     age : {
@@ -68,9 +68,9 @@ var validationResult = { success : true };
 var validationResult = { 
     success : false,
     error : {
-        key : "name" // field name from scheme with validation error,
-                     // "address.city" if error in strucrute (inner object)
-        text : "..." // some error text
+        key : "name", // field name from scheme with validation error,
+                      // "address.city" if error in strucrute (inner object)
+        text : "..."  // some error text
     }
 };
 ```
