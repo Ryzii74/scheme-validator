@@ -1,0 +1,18 @@
+{
+  "author" : "Dmitri Boronin <ryzii@yandex.ru>",
+  "name": "scheme-validator",
+  "version": "0.0.1",
+  "description": "Simple lib for object validation bu scheme",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Ryzii74/scheme-validator.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "license": "ISC"
+}
