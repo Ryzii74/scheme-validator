@@ -10,12 +10,15 @@ npm install scheme-validation
 
 ### Use scheme
 
+```javascript
 var schemeLib = require('scheme-validator');
 var validationScheme = schemeLib(validators[method]);
 var validationResult = validationScheme(<object scheme>).validate(data);
+```
 
 ### Scheme validators
 
+```javascript
 var scheme = {
     name : {
         required : true  // requiredField,
@@ -50,5 +53,6 @@ var scheme = {
         }
     }
 }
+```
 
 If field is not required and have no value in validated data - result will be successful!
