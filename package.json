@@ -1,5 +1,5 @@
 {
-  "author" : "Dmitri Boronin <ryzii@yandex.ru>",
+  "author": "Dmitri Boronin <ryzii@yandex.ru>",
   "name": "scheme-validator",
   "version": "0.0.3",
   "description": "Simple lib for object validation by scheme",
@@ -21,8 +21,12 @@
   "engines": {
     "node": "*"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
   "optionalDependencies": {},
   "license": "ISC"
 }
