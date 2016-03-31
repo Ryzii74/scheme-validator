@@ -1,6 +1,6 @@
 # scheme-validator
 
-Simple lib for object validation bu scheme for node.js
+Simple lib for object validation by scheme for node.js
 
 ## install
 

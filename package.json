@@ -2,7 +2,7 @@
   "author" : "Dmitri Boronin <ryzii@yandex.ru>",
   "name": "scheme-validator",
   "version": "0.0.2",
-  "description": "Simple lib for object validation bu scheme",
+  "description": "Simple lib for object validation by scheme",
   "repository": {
     "type": "git",
     "url": "git://github.com/Ryzii74/scheme-validator.git"
