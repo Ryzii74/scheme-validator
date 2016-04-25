@@ -18,8 +18,10 @@ Scheme.prototype.validate = function (data) {
             if (field.structure && typeof field.structure !== "object") return error(key, 'Wrong data for structure!');
 
             var scheme = new Scheme(field.structure);
-            var result = scheme.validate(data[key]);
-            if (!result.success) return error(key + '.' + result.error.key, result.error.text);
+            if (data[key]) {
+                var result = scheme.validate(data[key]);
+                if (!result.success) return error(key + '.' + result.error.key, result.error.text);
+            }
         }
 
         if (!require('./lib/type')(field, data, key)) return error(key, 'Wrong type of field!');
