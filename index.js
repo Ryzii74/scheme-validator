@@ -12,6 +12,7 @@ Scheme.prototype.validate = function (data) {
         if (!this.scheme.hasOwnProperty(key)) continue;
         var field = this.scheme[key];
 
+        if (!require('./lib/required')(field, data, key)) return error(key, 'Field is required!');
         if (field.structure) {
             if (field.structure && field.hasOwnProperty('type') && field.type.toLowerCase() !== "object") return error(key, 'Wrong type for field with structure!');
             if (field.structure && typeof field.structure !== "object") return error(key, 'Wrong data for structure!');
@@ -21,7 +22,6 @@ Scheme.prototype.validate = function (data) {
             if (!result.success) return error(key + '.' + result.error.key, result.error.text);
         }
 
-        if (!require('./lib/required')(field, data, key)) return error(key, 'Field is required!');
         if (!require('./lib/type')(field, data, key)) return error(key, 'Wrong type of field!');
 
         if (field.enum && field.enum.constructor && field.enum.constructor !== Array) return error(key, 'Wrong data for enum!');
