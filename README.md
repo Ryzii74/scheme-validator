@@ -1,4 +1,5 @@
-# scheme-validator
+# scheme-validator 
+[![Build Status](https://travis-ci.org/Ryzii74/scheme-validator.svg?branch=master)](https://travis-ci.org/Ryzii74/scheme-validator) [![Code Climate](https://codeclimate.com/github/Ryzii74/scheme-validator/badges/gpa.svg)](https://codeclimate.com/github/Ryzii74/scheme-validator) [![Coverage Status](https://coveralls.io/repos/github/Ryzii74/scheme-validator/badge.svg?branch=master)](https://coveralls.io/github/Ryzii74/scheme-validator?branch=master)
 
 Simple lib for object validation by scheme for node.js
 
