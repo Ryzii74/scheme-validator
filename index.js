@@ -40,6 +40,8 @@ function check(field, data, key) {
         }
     }
 
+    if (!Type(field, data, key)) return error(key, 'Wrong type of field!');
+
     if (field.array && data[key]) {
         var result = null;
 
@@ -50,8 +52,6 @@ function check(field, data, key) {
 
         if (result && !result.success) return error(key + '.' + i, result.error.text);
     }
-
-    if (!Type(field, data, key)) return error(key, 'Wrong type of field!');
 
     if (field.enum && field.enum.constructor && field.enum.constructor !== Array) return error(key, 'Wrong data for enum!');
     if (!Enum(field, data, key)) return error(key, 'Value is not part of enum!');

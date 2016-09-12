@@ -14,6 +14,23 @@ describe('Array', function() {
         expect(result.success).to.equal(true);
     });
 
+    it('field with array but not array type => error', function () {
+        var scheme = validator({
+            test : {
+                array : {
+                    type : "string"
+                }
+            }
+        });
+
+        var result = scheme.validate({ test : "123" });
+        expect(result).to.be.a("object");
+        expect(result.success).to.equal(false);
+        expect(result.error).to.be.a("object");
+        expect(result.error.key).to.equal("test");
+        expect(result.error.text).to.equal("Wrong type of field!");
+    });
+
     it('field with array and bad validation => error', function () {
         var scheme = validator({
             test : {
