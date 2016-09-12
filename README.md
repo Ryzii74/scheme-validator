@@ -39,6 +39,11 @@ var scheme = {
           return !!value; 
         }
     },
+    users : {
+        array : {
+            enum : [ 1, 2, 3, 4 ]
+        }
+    },
     address : {
         structure : { // address field is an object with some structure, that recursively validated too
             city : {
