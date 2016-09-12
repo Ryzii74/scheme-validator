@@ -1,3 +1,9 @@
+var Required = require('./lib/required');
+var Type = require('./lib/type');
+var Enum = require('./lib/enum');
+var Value = require('./lib/value');
+var CustomValidator = require('./lib/validator');
+
 module.exports = function (scheme) {
     return new Scheme(scheme);
 };
@@ -22,7 +28,7 @@ Scheme.prototype.validate = function (data) {
 function check(field, data, key) {
     if (!field) return;
 
-    if (!require('./lib/required')(field, data, key)) return error(key, 'Field is required!');
+    if (!Required(field, data, key)) return error(key, 'Field is required!');
     if (field.structure) {
         if (field.structure && field.hasOwnProperty('type') && field.type.toLowerCase() !== "object") return error(key, 'Wrong type for field with structure!');
         if (field.structure && typeof field.structure !== "object") return error(key, 'Wrong data for structure!');
@@ -45,15 +51,15 @@ function check(field, data, key) {
         if (result && !result.success) return error(key + '.' + i, result.error.text);
     }
 
-    if (!require('./lib/type')(field, data, key)) return error(key, 'Wrong type of field!');
+    if (!Type(field, data, key)) return error(key, 'Wrong type of field!');
 
     if (field.enum && field.enum.constructor && field.enum.constructor !== Array) return error(key, 'Wrong data for enum!');
-    if (!require('./lib/enum')(field, data, key)) return error(key, 'Value is not part of enum!');
+    if (!Enum(field, data, key)) return error(key, 'Value is not part of enum!');
 
-    if (!require('./lib/value')(field, data, key)) return error(key, 'Value is not equal!');
+    if (!Value(field, data, key)) return error(key, 'Value is not equal!');
 
     if (field.validator && typeof field.validator !== "function") return error(key, 'Wrong data for validator!');
-    if (!require('./lib/validator')(field, data, key)) return error(key, 'Validator detected wrong data!');
+    if (!CustomValidator(field, data, key)) return error(key, 'Validator detected wrong data!');
 }
 
 function error(key, text) {
