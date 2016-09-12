@@ -40,7 +40,7 @@ var scheme = {
         }
     },
     users : {
-        array : {
+        array : { // check each element of an array on validating inner object params
             enum : [ 1, 2, 3, 4 ]
         }
     },
