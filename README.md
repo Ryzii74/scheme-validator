@@ -13,8 +13,8 @@ npm install scheme-validation
 
 ```javascript
 var schemeLib = require('scheme-validator');
-var validationScheme = schemeLib(validators[method]);
-var validationResult = validationScheme(<object scheme>).validate(data);
+var validationScheme = schemeLib(scheme); // scheme example you can see below
+var validationResult = validationScheme.validate(data); // some data to validate
 ```
 
 ### Scheme validators
